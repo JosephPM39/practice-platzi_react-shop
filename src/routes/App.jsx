@@ -12,6 +12,7 @@ import Checkout from '@pages/Checkout';
 import Orders from '@pages/Orders';
 import NotFound from '@pages/NotFound';
 import '@styles/global.css';
+import AppContext from '@context/AppContext';
 
 const App = () => {
     return (
@@ -27,7 +28,7 @@ const App = () => {
 					<Route exact path="/signup" element={<CreateAccount/>} />
 					<Route exact path="/checkout" element={<Checkout/>} />
 					<Route exact path="/orders" element={<Orders/>} />
-					<Route path="*" component={<NotFound/>} />
+					<Route exact path="/*" element={<NotFound/>} />
                 </Routes>
             </Layout>
         </BrowserRouter>
